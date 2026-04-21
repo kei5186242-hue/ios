@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        var links = [
-            "https://matching-affi.jp/optim.php?ms=mi496el3tspl",
+        var rotation = [
             "https://preaf.jp/pa.do?s=v19509&o=65715&guid=ON",
             "https://preaf.jp/pa.do?s=v19509&o=65541&guid=ON",
             "https://preaf.jp/pa.do?s=v19509&o=66323&guid=ON",
@@ -13,16 +12,11 @@
             "https://preaf.jp/pa.do?s=v19509&o=64632&guid=ON",
             "https://preaf.jp/pa.do?s=v19509&o=66866&guid=ON"
         ];
-        var w = 95 / 7;
-        var weights = [5, w, w, w, w, w, w, w];
-        var r = Math.random() * 100;
-        var total = 0;
-        for (var i = 0; i < links.length; i++) {
-            total += weights[i];
-            if (r < total) {
-                window.location.replace(links[i]);
-                break;
-            }
+        if (Math.random() < 0.05) {
+            window.location.replace("https://matching-affi.jp/optim.php?ms=mi496el3tspl");
+        } else {
+            var hour = new Date().getHours();
+            window.location.replace(rotation[hour % rotation.length]);
         }
     </script>
 </head>
